@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () =>{
     
-    // addStorageToReserve(),
+    addStorageToReserve(),
     renderMenuOptions(),
     printModal(reserve),
     printTotals(reserve)
