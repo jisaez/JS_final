@@ -12,7 +12,7 @@ const saveReserveStorage = (reserve) => {
 
 function addStorageToReserve () {
     const reservation = localStorage.getItem('reserves')
-    //operador AND y SPREAD
+
     reservation && reserve.push(...JSON.parse(reservation));
 };
 
