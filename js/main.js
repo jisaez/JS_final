@@ -89,7 +89,7 @@ function renderMenuOptions (){
 
 // AGREGAR AL CARRITO //
 function addMenuToReserve(id){  
-    fetch('./menu.Json')
+    fetch('./menu.json')
     .then((response) => response.json())
     .then((menuOptions) => { 
     let menu = menuOptions.find(menu => menu.id === id);
