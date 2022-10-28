@@ -24,7 +24,6 @@ function renderMenuOptions (){
 
     const menus = document.getElementById('menus');
 
-    // AGREGO FETCH CON RUTA RELATIVA
     fetch('./menu.json')
     .then((response) => response.json())
     .then((options) => { 
@@ -45,7 +44,6 @@ function renderMenuOptions (){
                 <h5 class="card-title">${m.menuName}</h5>
                 <p class="card-text">${m.description}</p>
                 <p>${m.price}</p>
-
                 <div id=divCounter class= "d-flex flex-row align-items-center text-center justify-content-center">
                     <button id="remove${m.id}" class="btn btn-danger rounded-4"> - </button>
                     <h6 class="text-center m-4" id="quant${m.id}"> - </h6>
@@ -94,7 +92,7 @@ function addMenuToReserve(id){
     .then((menuOptions) => { 
     let menu = menuOptions.find(menu => menu.id === id);
     let menuInReserve = reserve.find(menu => menu.id === id);
-    // TERNARIO
+
     menuInReserve ?  menuInReserve.quant ++ : (menu.quant = 1, reserve.push(menu))
 
     Toastify({
@@ -209,7 +207,7 @@ function printTotals(reserve){
     modalTotals.appendChild(modalTotal);
 };
 
-// ================= CONFIRM & GET DATA ===============
+// ================= CONFIRM ===============
 
 const confirmReserve = document.getElementById ('btnConfirm');
 confirmReserve.addEventListener('click', () =>{
